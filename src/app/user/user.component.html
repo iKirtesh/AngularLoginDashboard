@@ -1,0 +1,50 @@
+<div class="container">
+<!--  jsutify content -->
+  <div class="mb-3 row">
+    <div class="col-12">
+      <div class="row justify-content-around">
+        <div class="col-4">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" [(ngModel)]="username">
+        </div>
+        <div class="col-4">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="password">
+        </div>
+
+        <div class="row justify-content-around mt-3">
+          <div class="col-2 mt-3">
+            <button class="btn btn-primary" (click)="AddData()">Add User</button>
+          </div>
+          <div class="col-2 mt-3">
+            <button class="btn btn-danger" (click)="userList.pop()">Delete User</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- </form> -->
+  <hr />
+  <div  class="container mt-3 bg-success text-white p-2 rounded position-absolute">
+
+    <!-- <ul class="list-group list-group-horizontal"> -->
+    <ul class="row justify-content-around text-dark text-center p-2 rounded position-relative">
+      <h5 class="col-3">Sr. No</h5>
+      <h5 class="col-3">Usernames</h5>
+      <h5 class="col-3">Passwords</h5>
+    </ul>
+    <div *ngFor="let user of userList; index as indexOfelement;">
+      <ul class="row justify-content-around p-2 text-center">
+        <span class="col-3">{{indexOfelement}}</span>
+        <span class="col-3">{{user.name}}</span>
+        <span class="col-3">{{user.pass}}</span>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <!-- </ol> -->
+</div>
